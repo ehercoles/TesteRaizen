@@ -35,7 +35,7 @@ namespace TesteRaizen.Controllers
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                clientes = clientes.Where(s => s.Nome!.Contains(searchString));
+                clientes = clientes.Where(s => s.Nome!.Contains(searchString) || s.Cep.Contains(searchString));
             }
 
             return View(await clientes.ToListAsync());
